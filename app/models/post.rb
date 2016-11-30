@@ -10,5 +10,6 @@ class Post < ApplicationRecord
   validates_attachment_size :image, :less_than => 2.megabytes
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
 end
