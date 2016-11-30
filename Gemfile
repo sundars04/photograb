@@ -14,6 +14,7 @@ gem 'haml'
 gem 'paperclip'
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri
