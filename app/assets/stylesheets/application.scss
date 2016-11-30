@@ -24,7 +24,11 @@ body {
 .navbar-brand {
   a {
   color: #125688;
-  }
+  text-decoration: none;
+    &:hover {
+      color: #50A7C7;
+    }
+  }  
 }
 .navbar-default {
   background-color: #fff;

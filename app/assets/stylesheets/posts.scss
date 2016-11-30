@@ -46,7 +46,6 @@
   }
   .caption {
     margin-bottom: 5px;
-    text-align: center;
   }
   .user-name {
     font-weight: 500;
@@ -55,7 +54,8 @@
     font-size: 15px;
   }
   .user-name, .caption-content {
-    display: inline;
+    
+    text-align: center;
   }
   .comment {
     margin-top: 7px;
@@ -76,12 +76,13 @@
   font-size: 15px;
   line-height: 18px;
 }
-.comment-content {
+.comment_content {
   font-size: 15px;
   line-height: 18px;
   border: medium none;
   width: 100%;
   color: #4B4F54;
+  display: inline;
 }
 .comment-like-form {
   padding-top: 24px;
