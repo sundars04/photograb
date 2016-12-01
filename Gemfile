@@ -15,6 +15,8 @@ gem 'paperclip'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'kaminari', '~> 0.17.0'
+gem 'jquery-turbolinks', '~> 2.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
