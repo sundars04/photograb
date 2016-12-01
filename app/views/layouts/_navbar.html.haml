@@ -6,11 +6,17 @@
         %span.icon-bar
         %span.icon-bar
       .navbar-brand= link_to "Photogram", root_path
+      %ul.nav.navbar-nav
+        - if user_signed_in?
+          %li
+            = link_to "New Post", new_post_path
     .collapse.navbar-collapse#bs-navbar-collapse-1
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li
-            = link_to "New Post", new_post_path
+            = link_to "My Profile", profile_path(current_user.user_name)
+          %li
+            = link_to "Password Settings", edit_user_registration_path
           %li
             = link_to "Sign Out", destroy_user_session_path, method: :delete
         - else
