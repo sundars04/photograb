@@ -13,4 +13,7 @@
           .row
             .col-md-12
               .form-group.text-center
-                = f.submit "Update Profile", class: 'btn btn-success'
+                %h4 Update your bio:
+                = f.text_area :bio, label: false, rows: 4
+          .form-group.text-center
+            = f.submit "Update Profile", class: 'btn btn-success'

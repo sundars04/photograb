@@ -17,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'kaminari', '~> 0.17.0'
 gem 'jquery-turbolinks', '~> 2.1'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

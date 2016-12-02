@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :find_post, :only => [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+  before_action :find_post, :only => [:show, :edit, :update, :destroy, :like, :unlike]
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy, :like, :unlike]
   before_action :own_post, :only => [:edit, :update, :destroy]
 
   def index
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Your Pic has been created!"
-      redirect_to posts_path
+      redirect_to root_path
     else
       flash.now[:alert] = "Your Pic couldnt be created! Please check the form"
       render 'new'
@@ -42,6 +42,22 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:error] = "Your Pic was deleted successfully!"
     redirect_to posts_path
+  end
+
+  def like
+    @post.liked_by current_user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+  end
+
+  def unlike
+    @post.unliked_by current_user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end    
   end
 
   private
