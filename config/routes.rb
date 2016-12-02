@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'notifications/link_through'
+  get 'notifications/:id/link_through', to: 'notifications#link_through', as: :link_through
+  get 'notifications', to: 'notifications#index'
 
   get 'profiles/show'
 
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
       get 'unlike'
     end
   end
+
+
 
   root :to => 'posts#index'
 end
